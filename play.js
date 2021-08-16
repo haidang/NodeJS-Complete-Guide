@@ -1,4 +1,3 @@
-// A key-value pair is also called a "property" or a "field" of the object
 const person = {
   name: 'Max',
   age: 29,
@@ -6,7 +5,25 @@ const person = {
     console.log('Hi, I am ' + this.name); // => "Hi, I am Max"
   },
 };
-person.greet(); // => "Hi, I am Max"
+const hobbies = ['Sports', 'Cooking', 1, true];
+// for (let hobby of hobbies) {
+//   console.log(hobby);
+// }
+console.log(
+  // .map(): update value and return a new array, it won't edit old array
+  hobbies.map((hobby) => 'Hobby: ' + hobby)
+);
+console.log(hobbies);
+
+// A key-value pair is also called a "property" or a "field" of the object
+// const person = {
+//   name: 'Max',
+//   age: 29,
+//   greet() {
+//     console.log('Hi, I am ' + this.name); // => "Hi, I am Max"
+//   },
+// };
+// person.greet(); // => "Hi, I am Max"
 
 // const person = {
 //   name: 'Max',
