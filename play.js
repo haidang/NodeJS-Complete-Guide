@@ -1,25 +1,60 @@
-const person = {
-  name: 'Max',
-  age: 29,
-  greet() {
-    console.log('Hi, I am ' + this.name); // => "Hi, I am Max"
-  },
+const fetchData = (callback) => {
+  const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Done!');
+    }, 1500);
+  });
+  return promise;
 };
-const hobbies = ['Sports', 'Cooking', 1, true];
+setTimeout(() => {
+  console.log('Timer is done!');
+  fetchData()
+    .then((text) => {
+      console.log(text);
+      return fetchData(); // return new once fetchData
+    })
+    .then((text2) => {
+      console.log(text2);
+    });
+}, 1);
 
-const {name, age} = person;
-console.log(name, age);
-
-const printName = ({name, greet}) => {
-  console.log(name);
-};
-// const printName = (personData) => {
-//   console.log(personData.name);
+// const fetchData = (callback) => {
+//   setTimeout(() => {
+//     callback('Done!');
+//   }, 1500);
 // };
-printName(person);
+// setTimeout(() => {
+//   console.log('Timer is done!');
+//   fetchData((text) => {
+//     console.log(text);
+//   });
+// }, 1);
 
-const [hobby1, hobby2] = hobbies;
-console.log(hobby1, hobby2);
+console.log('Hello!');
+console.log('Hi!');
+
+// const person = {
+//   name: 'Max',
+//   age: 29,
+//   greet() {
+//     console.log('Hi, I am ' + this.name); // => "Hi, I am Max"
+//   },
+// };
+// const hobbies = ['Sports', 'Cooking', 1, true];
+
+// const {name, age} = person;
+// console.log(name, age);
+
+// const printName = ({name, greet}) => {
+//   console.log(name);
+// };
+// // const printName = (personData) => {
+// //   console.log(personData.name);
+// // };
+// printName(person);
+
+// const [hobby1, hobby2] = hobbies;
+// console.log(hobby1, hobby2);
 
 // // const copiedArray = hobbies.slice();
 // const copiedArray = [...hobbies]; // SPREAD operator (...)
