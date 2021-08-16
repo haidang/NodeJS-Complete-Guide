@@ -6,25 +6,44 @@ const person = {
   },
 };
 const hobbies = ['Sports', 'Cooking', 1, true];
-// Objects and arrays are so-called reference types
-hobbies.push('Programming');
-/* 
-Can add new element, because constant value has not changed.
-The reason is that reference types only store an address pointing 
-at the place in memory where that array is stored and that pointer address hasn't
-changed by adding a new element
-*/
-console.log(hobbies);
-// Copy the ARRAY actual value
-let copiedHobbies = hobbies.slice();
-console.log(copiedHobbies);
-copiedHobbies = [...hobbies];
-console.log(copiedHobbies);
-// Copy the OBJECT actual value
-let copiedPerson = Object.assign({}, person);
+
+// const copiedArray = hobbies.slice();
+const copiedArray = [...hobbies]; // SPREAD operator (...)
+console.log(copiedArray);
+const copiedPerson = {...person};
 console.log(copiedPerson);
-copiedHobbies = {...person};
-console.log(copiedPerson);
+
+const toArray = (...args) => {
+  // REST operator
+  return args;
+};
+console.log(toArray(1, 2, 3, 4, 5)); // => [1, 2, 3, 4, 5]
+
+// const toArray = (arg1, arg2, arg3) => {
+//   return [arg1, arg2, arg3];
+// };
+// console.log(toArray(1, 2, 3)); // => [1, 2, 3]
+// console.log(toArray(1, 2, 3, 4)); // => [1, 2, 3]
+
+// // Objects and arrays are so-called reference types
+// hobbies.push('Programming');
+// /*
+// Can add new element, because constant value has not changed.
+// The reason is that reference types only store an address pointing
+// at the place in memory where that array is stored and that pointer address hasn't
+// changed by adding a new element
+// */
+// console.log(hobbies);
+// // Copy the ARRAY actual value
+// let copiedHobbies = hobbies.slice();
+// console.log(copiedHobbies);
+// copiedHobbies = [...hobbies];
+// console.log(copiedHobbies);
+// // Copy the OBJECT actual value
+// let copiedPerson = Object.assign({}, person);
+// console.log(copiedPerson);
+// copiedHobbies = {...person};
+// console.log(copiedPerson);
 
 // for (let hobby of hobbies) {
 //   console.log(hobby);
