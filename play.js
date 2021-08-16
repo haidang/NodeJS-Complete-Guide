@@ -1,6 +1,9 @@
-var name = 'Max';
-var age = 29;
-var hasHobbies = true;
+const name = 'Max';
+let age = 29;
+const hasHobbies = true;
+
+// name = 'Dang Thach'; // will be error
+age = 30;
 
 // console.log(name);
 
