@@ -6,14 +6,34 @@ const person = {
   },
 };
 const hobbies = ['Sports', 'Cooking', 1, true];
+// Objects and arrays are so-called reference types
+hobbies.push('Programming');
+/* 
+Can add new element, because constant value has not changed.
+The reason is that reference types only store an address pointing 
+at the place in memory where that array is stored and that pointer address hasn't
+changed by adding a new element
+*/
+console.log(hobbies);
+// Copy the ARRAY actual value
+let copiedHobbies = hobbies.slice();
+console.log(copiedHobbies);
+copiedHobbies = [...hobbies];
+console.log(copiedHobbies);
+// Copy the OBJECT actual value
+let copiedPerson = Object.assign({}, person);
+console.log(copiedPerson);
+copiedHobbies = {...person};
+console.log(copiedPerson);
+
 // for (let hobby of hobbies) {
 //   console.log(hobby);
 // }
-console.log(
-  // .map(): update value and return a new array, it won't edit old array
-  hobbies.map((hobby) => 'Hobby: ' + hobby)
-);
-console.log(hobbies);
+// console.log(
+//   // .map(): update value and return a new array, it won't edit old array
+//   hobbies.map((hobby) => 'Hobby: ' + hobby)
+// );
+// console.log(hobbies);
 
 // A key-value pair is also called a "property" or a "field" of the object
 // const person = {
