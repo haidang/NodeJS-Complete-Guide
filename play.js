@@ -7,17 +7,31 @@ const person = {
 };
 const hobbies = ['Sports', 'Cooking', 1, true];
 
-// const copiedArray = hobbies.slice();
-const copiedArray = [...hobbies]; // SPREAD operator (...)
-console.log(copiedArray);
-const copiedPerson = {...person};
-console.log(copiedPerson);
+const {name, age} = person;
+console.log(name, age);
 
-const toArray = (...args) => {
-  // REST operator
-  return args;
+const printName = ({name, greet}) => {
+  console.log(name);
 };
-console.log(toArray(1, 2, 3, 4, 5)); // => [1, 2, 3, 4, 5]
+// const printName = (personData) => {
+//   console.log(personData.name);
+// };
+printName(person);
+
+const [hobby1, hobby2] = hobbies;
+console.log(hobby1, hobby2);
+
+// // const copiedArray = hobbies.slice();
+// const copiedArray = [...hobbies]; // SPREAD operator (...)
+// console.log(copiedArray);
+// const copiedPerson = {...person};
+// console.log(copiedPerson);
+
+// const toArray = (...args) => {
+//   // REST operator
+//   return args;
+// };
+// console.log(toArray(1, 2, 3, 4, 5)); // => [1, 2, 3, 4, 5]
 
 // const toArray = (arg1, arg2, arg3) => {
 //   return [arg1, arg2, arg3];
