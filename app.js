@@ -1,8 +1,9 @@
 const http = require('http');
 const fs = require('fs');
+const { log } = require('console');
 
 const server = http.createServer((req, res) => {
-  console.log(req.url, req.method, req.headers);
+  // console.log(req.url, req.method, req.headers);
   const url = req.url;
   const method = req.method;
 
@@ -17,8 +18,16 @@ const server = http.createServer((req, res) => {
     return res.end(); // return a response and quit the function execution
   }
   if (url === '/message' && method === 'POST') {
-    fs.writeFileSync('message.txt', 'DUMMY');
-    // res.writeHead(302); // allows us to write some meta information (302 - Found Status)
+    const body = [];
+    req.on('data', (chunk) => {
+      console.log(chunk);
+      body.push(chunk);
+    });
+    req.on('end', () => {
+      const parsedBody = Buffer.concat(body).toString();
+      const message = parsedBody.split('=')[1];
+      fs.writeFileSync('message.txt', message);
+    });
     res.statusCode = 302;
     res.setHeader('Location', '/');
     return res.end();
