@@ -1,0 +1,21 @@
+{
+  "name": "nodejs-complete-guide",
+  "version": "1.0.0",
+  "description": "NodeJS Complete Guide learning at Udemy",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "start-server": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haidang/NodeJS-Complete-Guide.git"
+  },
+  "author": "Dang Thach",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haidang/NodeJS-Complete-Guide/issues"
+  },
+  "homepage": "https://github.com/haidang/NodeJS-Complete-Guide#readme"
+}
