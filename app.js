@@ -10,6 +10,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(adminRoutes);
 app.use(shopRoutes);
 
-const routes = require('./routes');
+app.use((req, res, next) => {
+  res.status(404).send('<h2>Page not found</h2>');
+});
 
 app.listen(3000);
