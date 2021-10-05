@@ -11,21 +11,21 @@
   display: block;
 }
 .form-control input {
-  border: 1px solid #cada86;
+  border: 1px solid yellowgreen;
   width: 100%;
   font: inherit;
   border-radius: 2px;
 }
 button {
   font: inherit;
-  color: #383a30;
-  border: 1px solid #55525a;
+  color: #018170;
+  border: 1px solid yellowgreen;
   background-color: white;
   border-radius: 3px;
   cursor: pointer;
 }
 button:hover,
 button:active {
-  background-color: #6200ff;
+  background-color: yellowgreen;
   color: white;
 }

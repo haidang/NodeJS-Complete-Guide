@@ -9,7 +9,7 @@ main {
 .main-header {
   width: 100%;
   height: 3.5rem;
-  background-color: #aac437;
+  background-color: #018170;
   padding: 0 1.5rem;
 }
 .main-header__nav {
@@ -29,10 +29,10 @@ main {
 }
 .main-header__item a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 .main-header__item a:hover,
 .main-header__item a:active,
 .main-header__item a.active {
-  color: #440dc4;
+  color: yellowgreen;
 }
